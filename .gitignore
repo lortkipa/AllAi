@@ -1,0 +1,8 @@
+node_modules/
+frontend/dist/
+.env
+allai-server
+allai-server.exe
+*.log
+.DS_Store
+

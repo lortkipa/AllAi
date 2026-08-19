@@ -1,0 +1,16 @@
+{
+  "name": "allai",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,magenta \"go -C backend run ./cmd/server\" \"npm run dev --workspace frontend\"",
+    "build": "npm run build --workspace frontend && go -C backend build -o ../allai-server.exe ./cmd/server",
+    "test": "go -C backend test ./... && npm run lint --workspace frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
